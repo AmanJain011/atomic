@@ -10,7 +10,7 @@ const Header = () => {
     <Wrapper>
       <div className = "inner">
         <span className = 'logo'>
-          <Link to = "/">Quiz App</Link>
+          <Link to = "/">Quizzie App</Link>
         </span>
         {
           user ? <Button
