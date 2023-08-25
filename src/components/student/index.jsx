@@ -42,7 +42,7 @@ const Student = () => {
                         /> : null
                     }
                     <div>
-                        <h2>Welcome, {user.name}!</h2>
+                        <h2>Welcome, {user?.name}!</h2>
                         <ul className="quiz-list">
                             {quizzes.map(quiz => (
                                 quiz.photo ?
