@@ -1,11 +1,9 @@
 import React from 'react'
-import ButtonWrapper from './style'
+import Wrapper from './style'
 
-const Button = ({type, name, method, children}) => {
+const Button = ({type, value, method, disabled}) => {
   return (
-      <ButtonWrapper type={type} name={name} onClick={method}>
-        {children}
-      </ButtonWrapper>
+      <Wrapper type={type} value={value} onClick={method} disabled={disabled} />
   )
 }
 

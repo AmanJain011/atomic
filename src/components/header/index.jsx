@@ -6,11 +6,14 @@ const Header = () => {
 
   return (
     <Wrapper>
-      <div className="inner">
-        <span className='logo'>
-          <Link to="/">Quiz App</Link>
+      <div className = "inner">
+        <span className = 'logo'>
+          <Link to = "/">Quiz App</Link>
         </span>
-        <Button type="button" name="button">Login</Button>
+        <Button
+          type = "button"
+          value = "Logout"
+        />
       </div>
     </Wrapper>
   )
