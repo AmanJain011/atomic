@@ -1,0 +1,21 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#root{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#root main{
+    flex: 1;
+    background-color: rgb(242 242 242);
+}
+
+#root main .inner{
+    width: 90%;
+    border: 1px solid red;
+    margin: auto;
+}
