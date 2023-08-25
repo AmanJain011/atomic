@@ -7,6 +7,7 @@ import QuizForm from "./components/quizForm";
 import { useState } from "react";
 import QuestionForm from "./components/questionForm";
 import SignUp from "./components/signup";
+import Login from "./components/login";
 
 function App() {
 
@@ -15,6 +16,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" exact element={<Home />} />
+        <Route path="/login" exact element={<Login/>}/>
         <Route path="/sign-up" exact element={<SignUp />}/>
         <Route path="/quizzes/:quizId/questions/test" exact element={<Test />} />
         <Route path="/teacher/create-quiz" exact element={<QuizForm/>}/>
