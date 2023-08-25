@@ -4,10 +4,13 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Wrapper from './style';
 import Button from '../button';
+import useValidation from '../../hooks/useValidation';
 
 const QuizDetails = () => {
     const [questions, setQuestions] = useState([])
     const { id } = useParams()
+
+    useValidation()
 
     useEffect(() => {
         axios.get(`https://quizattendace.onrender.com/api/quiz/getQuestions/${id}`)

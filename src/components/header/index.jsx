@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom'
 import Button from '../button'
 import Wrapper from './style'
+import useValidation from '../../hooks/useValidation'
 
 const Header = () => {
+  const user = useValidation()
 
   return (
     <Wrapper>
@@ -10,10 +12,12 @@ const Header = () => {
         <span className = 'logo'>
           <Link to = "/">Quiz App</Link>
         </span>
-        <Button
-          type = "button"
-          value = "Logout"
-        />
+        {
+          user ? <Button
+            type = "button"
+            value = "Logout"
+          /> : null
+        }
       </div>
     </Wrapper>
   )

@@ -3,6 +3,7 @@ import { useState } from 'react'
 import Button from '../button'
 import Wrapper from './style'
 import { useParams } from 'react-router-dom'
+import useValidation from '../../hooks/useValidation'
 
 const QuestionForm = () => {
   const [option1, setOption1] = useState("")
@@ -13,6 +14,8 @@ const QuestionForm = () => {
   const [correctAnsIndex, setCorrectAnsIndex] = useState("")
   const ans = [option1, option2, option3, option4]
   const {quizId} = useParams()
+
+  useValidation()
 
   const addQuestion = (e) => {
     e.target.disabled = true

@@ -3,6 +3,7 @@ import axios from 'axios'
 import { useState } from 'react'
 import Wrapper from './style'
 import Button from '../button'
+import useValidation from '../../hooks/useValidation'
 
 const QuizForm = () => {
   const [title, setTitle] = useState("")
@@ -10,6 +11,8 @@ const QuizForm = () => {
   const [description, setDescription] = useState("")
   const [photo, setPhoto] = useState("")
   const navigate = useNavigate()
+
+  useValidation()
 
   const createQuiz = (e) => {
     e.preventDefault()

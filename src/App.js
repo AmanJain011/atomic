@@ -7,6 +7,7 @@ import SignUp from "./components/signup";
 import Login from "./components/login";
 import Student from "./components/student";
 import QuizDetails from "./components/quizDetails";
+import NotFound from "./components/notFound";
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path = "/sign-up" exact element = {<SignUp />} />
         <Route path = "/teacher/create-quiz" exact element = {<QuizForm />} />
         <Route path = "/teacher/quiz/:quizId/add-question" exact element = {<QuestionForm />} />
+        <Route path="*" exact element = {<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>

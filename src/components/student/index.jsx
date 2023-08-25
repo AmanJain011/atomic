@@ -3,10 +3,13 @@ import axios from 'axios';
 import { useEffect, useState } from 'react';
 import Wrapper from './style';
 import Button from '../button';
+import useValidation from '../../hooks/useValidation';
 
 const Student = () => {
     const [quizzes, setQuizzes] = useState([])
     const navigate = useNavigate()
+
+    const user = useValidation()
 
     useEffect(() => {
         axios.get("https://quizattendace.onrender.com/api/quiz/read")
@@ -31,13 +34,15 @@ const Student = () => {
         <Wrapper>
             <div className="student-container">
                 <section>
-                    <Button
-                        type="button"
-                        value="+ Create Quiz"
-                        method={goToCreateQuizForm}
-                    />
+                    {
+                        user?.role === "teacher" ? <Button
+                            type="button"
+                            value="+ Create Quiz"
+                            method={goToCreateQuizForm}
+                        /> : null
+                    }
                     <div>
-                        <h2>Welcome, Student!</h2>
+                        <h2>Welcome, {user.name}!</h2>
                         <ul className="quiz-list">
                             {quizzes.map(quiz => (
                                 quiz.photo ?
@@ -49,11 +54,13 @@ const Student = () => {
                                             <h3 className="quiz-title">{quiz.title}</h3>
                                             <div className="quiz-title">{quiz.subTitle}</div>
                                         </Link>
-                                        <Button
-                                            type="button"
-                                            value="+ Add"
-                                            method={() => { goToAddQuestionForm(quiz.id) }}
-                                        />
+                                        {
+                                            user?.role === "teacher" ? <Button
+                                                type="button"
+                                                value="+ Add"
+                                                method={() => { goToAddQuestionForm(quiz.id) }}
+                                            /> : null
+                                        }
                                     </li> : null
                             ))}
                         </ul>
