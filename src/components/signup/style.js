@@ -22,5 +22,27 @@ align-items: center;
 .inner .role{
     padding: 20px;
 }
+
+.inner input[type=submit]{
+    color: white;
+    font-size: large;
+    font-weight: bold;
+    background-color: #05386b;
+}
+
+.inner #last{
+    margin-top: 10px;
+    font-size: large;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.inner #last [type=submit]{
+    padding: 10px;
+    border-radius: 50px;
+
+}
 `
 export default Wrapper

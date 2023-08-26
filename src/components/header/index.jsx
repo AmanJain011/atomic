@@ -3,6 +3,10 @@ import Button from '../button'
 import Wrapper from './style'
 
 const Header = () => {
+  const logout = () => {
+    localStorage.removeItem("https://server-api1-li2k.onrender.com/api/user/login", JSON.stringify())
+    console.log()
+  }
 
   return (
     <Wrapper>
@@ -10,7 +14,7 @@ const Header = () => {
         <span className='logo'>
           <Link to="/">Quiz App</Link>
         </span>
-        <Button type="button" name="button">Login</Button>
+        <Button type="button" name="button" onClick={logout}>Logout</Button>
       </div>
     </Wrapper>
   )

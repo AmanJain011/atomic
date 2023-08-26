@@ -16,6 +16,6 @@
 
 #root main .inner{
     width: 90%;
-    border: 1px solid red;
+    /* border: 1px solid red; */
     margin: auto;
 }

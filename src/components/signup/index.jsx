@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Wrapper from './style'
 import axios from 'axios'
-import Button from '../button'
+// import Button from '../button'
 
 const SignUp = () => {
     const [name, setName] = useState("")
@@ -67,10 +67,11 @@ const SignUp = () => {
                   value="Register"
                   disabled={false}
                   onClick={add}
-                 />
-                <div>
+                />
+                <div id="last">
                     <span>Already have an account?</span>
-                    <span><Link to='/login'>Login here</Link></span>
+                    <span><Link to='/login'> Login here</Link></span>
+                
                 </div>
             </form>
         </Wrapper>
