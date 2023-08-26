@@ -60,7 +60,7 @@ const SignUp = () => {
                 <select onChange={(e) => setRole(e.target.value)} value={role} className='role'>
                     <option disabled selected>---User Type---</option>
                     <option value="student">Student</option>
-                    <option value="faculty">Faculty</option>
+                    <option value="teacher">Faculty</option>
                 </select>
                 <input 
                   type="submit"
