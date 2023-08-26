@@ -17,7 +17,9 @@ const Header = () => {
         <span className = 'logo'>
           <Link to = "/">Quizzie App</Link>
         </span>
-        <Button type="button" name="button" value="Logout" method={logout}/>
+        {
+          user ? <Button type="button" name="button" value="Logout" method={logout}/> : null
+        }
       </div>
     </Wrapper>
   )
