@@ -23,9 +23,9 @@ const QuizForm = () => {
       title, subTitle, description, photo
     }).then((res) => {
       console.log(res.data[res.data.length-1].id)
-      const id = res.data[res.data.length-1].id
+      const quizId = res.data[res.data.length-1].id
       alert("Quiz is successfully created")
-      navigate(`/teacher/quiz/${id}/add-question`)
+      navigate(`/teacher/quiz/${quizId}/add-question`)
     }).catch((err) => {
       alert("Some thing went wrong")
     }).finally(() => {
