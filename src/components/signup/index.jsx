@@ -1,8 +1,8 @@
+import axios from 'axios'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import Wrapper from './style'
-import axios from 'axios'
-// import Button from '../button'
+
 
 const SignUp = () => {
     const [name, setName] = useState("")

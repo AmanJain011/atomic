@@ -1,7 +1,8 @@
-import { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import Wrapper from './style'
 import axios from 'axios'
+import { useState } from 'react'
+import Wrapper from './style'
+
 
 const Login = () => {
     const [contact, setContact] = useState("")
@@ -17,7 +18,7 @@ const Login = () => {
         axios.post("https://server-api1-li2k.onrender.com/api/user/login", {
             contact, password
         }).then(res => {
-            localStorage.setItem("user", JSON.stringify(res.data))
+            localStorage.setItem("LOGGED_IN_USER", JSON.stringify(res.data))
             navigate("/")
             console.log(res.data)
         }).catch(err => {
