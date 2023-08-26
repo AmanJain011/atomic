@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const Wrapper = styled.form`
+const Wrapper = styled.div`
 
 form {
     background-color: aliceblue;
@@ -8,7 +8,7 @@ form {
     flex-direction: column;
     align-items: center;
     margin-top: 100px;
-    margin-bottom: 240px;
+    margin-bottom: 270px;
     font-size: 20px;
     border-radius: 10px;
     /* border: red 1px solid;  */
