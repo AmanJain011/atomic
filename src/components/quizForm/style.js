@@ -1,6 +1,9 @@
 import { styled } from "styled-components";
 
-const Wrapper = styled.main`
+const Wrapper = styled.form`
+flex: 1;
+width: 90%;
+margin: auto;
 padding: 10px 0px;
 
 .inner{

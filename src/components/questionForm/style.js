@@ -15,6 +15,7 @@ padding: 10px 0px;
 
 .inner textarea{
     resize: vertical;
+    padding: 18px;
 }
 
 #correct-answer{

@@ -1,48 +1,66 @@
-import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios'
+import { useState } from 'react'
 import Wrapper from './style'
 import Button from '../button'
-import axios from 'axios'
+import useValidation from '../../hooks/useValidation'
 
 const QuizForm = () => {
   const [title, setTitle] = useState("")
-  const [subTitle, setSubTitle] =useState("")
+  const [subTitle, setSubTitle] = useState("")
   const [description, setDescription] = useState("")
   const [photo, setPhoto] = useState("")
-  const [quiz, setQuiz] = useState({})
+  const navigate = useNavigate()
+
+  useValidation()
 
   const createQuiz = (e) => {
     e.preventDefault()
-    setQuiz({...quiz, title, subTitle, description, photo})
-    console.log(quiz)
-    axios.post("https://quizattendace.onrender.com/")
+    e.target.disabled = true
+    e.target.value = "Creating..."
+
+    axios.post("https://quizattendace.onrender.com/api/quiz/add", {
+      title, subTitle, description, photo
+    }).then((res) => {
+      console.log(res.data[res.data.length-1].id)
+      const id = res.data[res.data.length-1].id
+      alert("Quiz is successfully created")
+      navigate(`/teacher/quiz/${id}/add-question`)
+    }).catch((err) => {
+      alert("Some thing went wrong")
+    }).finally(() => {
+      e.target.value = "Create"
+      e.target.disabled = false
+    })
   }
 
   return (
     <Wrapper>
-      <div className='inner'>
+      <div className = 'inner'>
         <span>Create a Quiz : </span>
         <input
-          type="text"
-          placeholder='Title for quiz'
-          onChange={(e)=>{setTitle(e.target.value)}}
+          type = "text"
+          placeholder = 'Title for quiz'
+          onChange = {(e) => { setTitle(e.target.value) }}
         />
         <input
-          type="text"
-          placeholder='Subtitle for quiz'
-          onChange={(e)=>{setSubTitle(e.target.value)}}
+          type = "text"
+          placeholder = 'Subtitle for quiz'
+          onChange = {(e) => { setSubTitle(e.target.value) }}
         />
-        <textarea rows="10" placeholder='Description'
-         onChange={(e)=>{setDescription(e.target.value)}}
+        <textarea rows = "10" placeholder='Description'
+          onChange = {(e) => { setDescription(e.target.value) }}
         ></textarea>
         <input
-          type="file"
-          onChange={(e)=>{setPhoto(URL.createObjectURL(e.target.files[0]))}}
+          type = "file"
+          onChange = {(e) => { setPhoto(URL.createObjectURL(e.target.files[0])) }}
         />
         <Button
-          type="submit"
-          name="create"
-          method ={createQuiz}
-        >Create</Button>
+          type = "submit"
+          value = "Create"
+          method = {createQuiz}
+          disabled = {false}
+        />
       </div>
     </Wrapper>
   )

@@ -1,6 +1,6 @@
 import { styled } from "styled-components";
 
-const ButtonWrapper =  styled.button`
+const Wrapper =  styled.input`
 background-color: #05386B;
 border: none;
 padding: 8px 16px;
@@ -12,6 +12,4 @@ cursor: pointer;
 transition-property: all;
 transition-duration: 150ms;
 `
-export default ButtonWrapper
-// dark #53BD95;
-// light #2c785c
+export default Wrapper

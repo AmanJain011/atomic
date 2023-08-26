@@ -1,19 +1,15 @@
 import { styled } from "styled-components";
 
 const Wrapper = styled.main`
-flex: 1;
-
-.questions{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+text-align: center;
+h1{
+    padding: 50px;
 }
-
-.submit-test{
+div{
     display: flex;
     justify-content: center;
-    padding: 10px;
+    gap: 50px;
 }
 `
+
 export default Wrapper
